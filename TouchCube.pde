@@ -1,19 +1,20 @@
 /**
- * Touch Cube
+ * TouchCube
  *
- * Moves the camera position based on input from a Nintendo DS touch screen
- * attached to an Arduino and sending X and Y data via the serial port in
- * the format X|Y, such as: 223|43.
+ * Renders a 3D cube and moves the camera position based on input from a
+ * Nintendo DS touch screen attached to an Arduino and sending X and Y
+ * data via the serial port in the format X,Y, such as: 223,43.
  *
- * If the value is out of range the values are not updated so that if the
- * stylus is lifted off the touch screen the cube will hold its position.
+ * If the value is out of range the values are not updated so that if
+ * the stylus is lifted off the touch screen the cube will hold its
+ * position.
  *
  * NOTE: This program runs under Processing, not Arduino! It's designed
  * to run on your host computer attached to an Arduino that is running
- * the NintendoDSTouchScreen sketch.
+ * the TouchControlPanelMinimal program to send it the X/Y coordinates.
  *
  * Copyright 2009 Jonathan Oxer <jon@oxer.com.au>
- * http://www.practicalarduino.com/
+ * http://www.practicalarduino.com/projects/medium/touch-control-panel
  */
 
 import processing.serial.*;
@@ -65,7 +66,7 @@ void serialEvent( Serial myPort )
     // Trim off any whitespace
     inString = trim( inString );
     // Split apart the X and Y values from the received data
-    int[] coordinates = int( split( inString, '|' ) );
+    int[] coordinates = int( split( inString, ',' ) );
 
     // Fetch the X coordinate (first value) but only process if in range
     touchX = coordinates[0];
