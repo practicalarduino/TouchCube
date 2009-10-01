@@ -1,6 +1,10 @@
 /**
  * TouchCube
  *
+ * NOTE: This program runs under Processing, not Arduino! It's designed
+ * to run on your host computer attached to an Arduino that is running
+ * the TouchscreenCoordinates program to send it the X/Y coordinates.
+ *
  * Renders a 3D cube and moves the camera position based on input from a
  * Nintendo DS touch screen attached to an Arduino and sending X and Y
  * data via the serial port in the format X,Y, such as: 223,43.
@@ -9,12 +13,9 @@
  * the stylus is lifted off the touch screen the cube will hold its
  * position.
  *
- * NOTE: This program runs under Processing, not Arduino! It's designed
- * to run on your host computer attached to an Arduino that is running
- * the TouchControlPanelMinimal program to send it the X/Y coordinates.
- *
  * Copyright 2009 Jonathan Oxer <jon@oxer.com.au>
- * http://www.practicalarduino.com/projects/medium/touch-control-panel
+ * Copyright 2009 Hugh Blemings <hugh@blemings.org>
+ * http://www.practicalarduino.com/projects/touch-control-panel
  */
 
 import processing.serial.*;
